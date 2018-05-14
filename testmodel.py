@@ -4,7 +4,7 @@ import tflearn
 import os
 import numpy as np
 
-width = 80 # mfcc features
+width = 120 # mfcc features
 height = 20
 
 script_patch=os.path.dirname(os.path.abspath( __file__ ))
