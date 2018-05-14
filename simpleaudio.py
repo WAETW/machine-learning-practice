@@ -3,7 +3,7 @@ import librosa
 import tflearn
 import os
 import numpy as np
-width = 46 # mfcc features
+width = 120 # mfcc features
 height = 20
 num = 20
 def mfcc_generator(wave_path,PAD_WIDTH=width):
@@ -28,7 +28,7 @@ y_test = np.r_[np.c_[np.ones(5), np.zeros(5)],np.c_[np.zeros(5), np.ones(5)]]
 net = tflearn.input_data([None, height, width])
 net = tflearn.lstm(net, 128, dropout=0.8)
 net = tflearn.fully_connected(net, 2, activation='softmax')
-net = tflearn.regression(net, optimizer='adam', learning_rate=500, loss='categorical_crossentropy')
+net = tflearn.regression(net, optimizer='adam', learning_rate=0.0001, loss='categorical_crossentropy')
 
 model = tflearn.DNN(net, tensorboard_verbose=0)
 
