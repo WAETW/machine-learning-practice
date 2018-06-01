@@ -3,7 +3,7 @@ import librosa
 import tflearn
 import os
 import numpy as np
-width = 120 # mfcc features
+width = 120 
 height = 20
 num = 20
 def mfcc_generator(wave_path,PAD_WIDTH=width):
